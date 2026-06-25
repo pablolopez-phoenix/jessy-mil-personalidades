@@ -1,0 +1,30 @@
+{
+  "summary": "Frontend-only Playwright testing on the public preview URL focused on the two new improvements: Gallery LIGHTBOX and OG IMAGE meta tags. All 19 assertions passed (19/19). Lightbox opens from each gallery item, navigates via next/prev buttons + ArrowRight/ArrowLeft keys, closes via X button, Escape key AND backdrop click, locks body scroll while open and restores it on close. OG/Twitter meta tags correctly point to /og-image.png and the asset returns 200. Gallery still renders 6 items in grid on desktop and mobile (390x844), all 16 images on the page load without breakage, and the lightbox figure fits within mobile viewport with the X button accessible. No regressions vs iteration_1. No new bugs.",
+  "backend_issues": {
+    "critical": [],
+    "minor": []
+  },
+  "frontend_issues": {
+    "ui_bugs": [],
+    "integration_issues": [],
+    "design_issues": []
+  },
+  "test_report_links": [],
+  "action_items": [
+    "Still pending from iteration_1: replace FORMSPREE_ENDPOINT placeholder 'https://formspree.io/f/REEMPLAZAR_ID' with a real Formspree form ID before production launch."
+  ],
+  "critical_code_review_comments": [
+    "Gallery.tsx backdrop close: works correctly via onClick={close} on the wrapper div + e.stopPropagation() on <figure>. Note for future tests: the absolute-positioned prev/next nav buttons (h-11 w-11 at left-3 / right-3, top-1/2) take an 11x11 hit area on the lateral edges, so automated backdrop-click tests should avoid the vertical middle band near the lateral edges (use bottom or top corners of the backdrop instead). Not a bug, just a testing-coordinates caveat.",
+    "Lightbox figure uses aspectRatio: '3 / 4' with maxHeight: '72vh' and the outer container uses max-h-[88vh]. Looks balanced on 1920x1080 and 390x844. On extremely short landscape phones (<420px height) the figure could clip; consider also constraining via max-h-[85svh] to handle small viewport units. Cosmetic, not blocking.",
+    "metadataBase falls back to https://expediente-jessy.pages.dev when NEXT_PUBLIC_SITE_URL is not set, which is why og:image is currently emitted as https://expediente-jessy.pages.dev/og-image.png in the preview env. The resource resolves 200 on the preview URL too, but for accurate social previews from the preview env set NEXT_PUBLIC_SITE_URL or accept that crawlers will hit the pages.dev domain.",
+    "Console still shows the same Next.js dev preload warning for one woff2 font ('preloaded but not used'). Cosmetic dev-only warning, not blocking. No other errors."
+  ],
+  "updated_files": [],
+  "success_rate": {"backend": "N/A (no backend)", "frontend": "100% (19/19 checks)"},
+  "test_credentials": "None (static site, no auth)",
+  "seed_data_creation": "None",
+  "retest_needed": false,
+  "main_agent_can_self_test": true,
+  "context_for_next_testing_agent": "Static Next.js landing on port 3000 via supervisor (next dev). Public URL: https://6e03ea71-7deb-400b-9760-08adb4136c5e.preview.emergentagent.com. NO backend (FastAPI not used). All 6 jessy-*.png images plus /og-image.png exist under /app/frontend/public. Gallery data-testids: gallery-section, gallery-title, gallery-item-{1..6}, gallery-lightbox, gallery-lightbox-close, gallery-lightbox-prev, gallery-lightbox-next. Lightbox closes on X / Escape / backdrop-click; uses document.body.style.overflow='hidden' while open. Keyboard nav: ArrowLeft/ArrowRight. Both iteration_1 (41/41) and iteration_2 (19/19) checks pass — only outstanding action is the Formspree placeholder ID.",
+  "rca of the issue": "No bugs found. Initial automated backdrop-click test reported a false-negative because the synthetic mouse click landed on the prev-arrow button's SVG (whose 44px hit-area at left:12px, top:50%). After re-running the backdrop click at a coordinate outside both the centered figure and the lateral nav buttons (e.g. 200, 1050 on a 1920x1080 viewport), document.elementFromPoint resolved to the lightbox backdrop DIV and the onClick={close} handler fired correctly — lightbox closed as expected."
+}

@@ -68,5 +68,10 @@ yarn build        # genera la carpeta ./out con el sitio estático
 2. **Conecta Formspree:** en `data/personalities.ts` cambia
    `FORMSPREE_ENDPOINT` de `https://formspree.io/f/REEMPLAZAR_ID`
    por tu ID real de [Formspree](https://formspree.io/).
+3. **Imagen OG (para compartir en WhatsApp/redes):** el archivo está en
+   `public/og-image.png`. Para que la URL sea absoluta en producción, define la
+   variable de entorno `NEXT_PUBLIC_SITE_URL` con tu dominio final
+   (ej. `https://tu-dominio.pages.dev`) en Cloudflare Pages → Settings →
+   Environment variables. Si no la defines, se usa un dominio por defecto.
 
 > Este sitio fue creado con fines humorísticos y de burla autorizada entre compañeros.
