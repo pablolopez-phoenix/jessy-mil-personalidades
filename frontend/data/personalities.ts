@@ -85,6 +85,18 @@ export const personalities: Personality[] = [
       "Finalmente, una de las pruebas más contundentes de su impacto social fue documentada cuando apareció junto al Dr. Simi. Desde ese momento surgieron dos teorías: o Jessy alcanzó reconocimiento nacional, o ya era parte del sistema de salud alternativo más querido del país. Lo único seguro es que se trató de una colaboración histórica, probablemente médica, probablemente emocional, seguramente inolvidable.",
     quote: "Sí hay foto, así que sí pasó.",
   },
+  {
+    id: 7,
+    year: "2026",
+    title: "Jessy, la reclusa de noble corazón",
+    image: "/images/jessy-prision.png",
+    alt: "Jessy en su etapa como reclusa de noble corazón",
+    tag: "La reclusa",
+    accent: "yellow",
+    description:
+      "En 2026, Jessy vivió una de sus etapas más intensas. Después de ver demasiado Prison Break y Orange Is the New Black, se convenció de que su destino era ingresar a prisión para salvar a una amiga. Con uniforme color caqui, lágrima de aparente experiencia y el tatuaje “la vida es bella” como declaración filosófica, Jessy demostró que incluso tras las rejas podía mantener la frente en alto, el drama encendido y la lealtad intacta. Algunos dicen que fue una misión secreta. Otros aseguran que simplemente se metió demasiado en el papel. Lo único cierto es que convirtió una celda en otro capítulo histórico de su leyenda.",
+    quote: "Entré por una amiga… y salí siendo leyenda.",
+  },
 ];
 
 export interface Testimonial {
