@@ -29,15 +29,21 @@ Sin backend, sin base de datos.
 - Hero con collage de 4 fotos, sello "Clasificado", 2 CTAs.
 - Expediente oficial con card dossier (ficha de datos).
 - Cronología: 6 cards (2020-2025) con imagen, año, título, descripción y frase.
-- Galería de 6 imágenes con hover zoom.
+- Galería de 6 imágenes con hover zoom + **LIGHTBOX** (abrir al click; cerrar con
+  X, Escape y click en backdrop; navegación prev/next con flechas y teclado;
+  bloqueo de scroll del body).
 - 4 testimonios.
 - Formulario Formspree (AJAX) con estados submitting/success/error.
 - Footer con disclaimer.
 - Animaciones reveal SSR-safe (contenido siempre visible).
-- QA frontend: 41/41 checks pasaron (iteration_1.json), sin bugs. Build OK.
+- **6 fotos reales** de Jessy colocadas en /public/images.
+- **Imagen OG** personalizada en /public/og-image.png + metadata OpenGraph/Twitter
+  (metadataBase con fallback; configurable vía NEXT_PUBLIC_SITE_URL).
+- QA frontend: iteration_1 41/41 + iteration_2 19/19 checks pasados, sin bugs.
+- Build estático `next build` → `out/` verificado OK (listo para Cloudflare Pages).
 
 ## Pendientes / Backlog
-- P0 (usuario): reemplazar imágenes placeholder por fotos reales (mismos nombres).
-- P0 (usuario): poner ID real de Formspree en `FORMSPREE_ENDPOINT`.
+- P0 (usuario): poner ID real de Formspree en `FORMSPREE_ENDPOINT` (data/personalities.ts).
+- P0 (usuario, opcional): definir `NEXT_PUBLIC_SITE_URL` en Cloudflare para OG absoluto.
 - P1: aria-live en mensajes de éxito/error del formulario (a11y).
-- P2: lightbox en galería; modo compartir en redes; favicon/OG image personalizada.
+- P2: compartir en redes (botones), favicon personalizado.
