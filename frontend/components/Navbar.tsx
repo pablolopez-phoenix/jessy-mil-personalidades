@@ -3,11 +3,11 @@
 import { useEffect, useState } from "react";
 
 const links = [
-  { label: "Inicio", href: "#inicio" },
-  { label: "Cronología", href: "#cronologia" },
-  { label: "Galería", href: "#galeria" },
-  { label: "Testimonios", href: "#testimonios" },
-  { label: "Contacto", href: "#contacto" },
+  { label: "Inicio", href: "#inicio", slug: "inicio" },
+  { label: "Cronología", href: "#cronologia", slug: "cronologia" },
+  { label: "Galería", href: "#galeria", slug: "galeria" },
+  { label: "Testimonios", href: "#testimonios", slug: "testimonios" },
+  { label: "Contacto", href: "#contacto", slug: "contacto" },
 ];
 
 export default function Navbar() {
@@ -49,7 +49,7 @@ export default function Navbar() {
             <li key={link.href}>
               <a
                 href={link.href}
-                data-testid={`navbar-link-${link.label.toLowerCase()}`}
+                data-testid={`navbar-link-${link.slug}`}
                 className="relative rounded-full px-3.5 py-2 text-sm font-medium text-graytext transition-colors duration-200 hover:text-ink"
               >
                 {link.label}
