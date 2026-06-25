@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #f8f4ee;
+  color: #1f1f1f;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Offset for fixed navbar when using anchor scroll */
+section[id] {
+  scroll-margin-top: 88px;
+}
+
+::selection {
+  background-color: #f2b533;
+  color: #1f1f1f;
+}
+
+/* Subtle paper grain overlay applied to the whole page */
+.grain::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.04;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Reveal-on-scroll: content is ALWAYS visible (SSR-safe). The `.is-visible`
+   class — added by the observer when the element enters the viewport — simply
+   replays a subtle entrance animation. If JS never runs, content stays visible. */
+.reveal {
+  opacity: 1;
+}
+.reveal.is-visible {
+  animation: reveal-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+@keyframes reveal-up {
+  0% {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Dossier dotted file line */
+.file-row {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+}
+.file-row .dots {
+  flex: 1;
+  border-bottom: 1px dotted rgba(31, 31, 31, 0.25);
+  transform: translateY(-4px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .reveal,
+  .reveal.is-visible {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
