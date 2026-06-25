@@ -28,7 +28,7 @@ export default function Dossier() {
           <div className="mt-8 flex flex-wrap gap-x-8 gap-y-4">
             <div>
               <p className="font-heading text-3xl font-extrabold text-accentred">
-                7
+                8
               </p>
               <p className="text-xs uppercase tracking-wide text-graytext">
                 Vidas documentadas

@@ -50,6 +50,18 @@ export const personalities: Personality[] = [
     quote: "Ahorita te atiendo, reina, nomás déjame acabar esto.",
   },
   {
+    id: 8,
+    year: "2022",
+    title: "Jessy, la reina de los tamales de La Merced",
+    image: "/images/jessy-tamales.png",
+    alt: "Jessy vendiendo tamales en el mercado de La Merced",
+    tag: "La tamalera",
+    accent: "red",
+    description:
+      "En 2022, Jessy vivió una etapa profundamente tradicional y deliciosa: se dedicó a vender tamales en el mercado de La Merced. Entre canastas, vaporeras y el bullicio del mercado, se ganó la fama de atender con carisma, paciencia y una convicción absoluta de que siempre había un tamal perfecto para cada cliente. Dicen que dominaba el arte de recomendar rajas, pollo, verdes o dulces según el estado emocional de la persona. Su puesto no solo alimentaba el cuerpo, también levantaba el ánimo y dejaba claro que Jessy podía triunfar incluso entre pasillos, abarrotes y antojos mañaneros.",
+    quote: "Llévele, llévele… que se acaban los de rajas.",
+  },
+  {
     id: 4,
     year: "2023",
     title: "Jessy, empresaria del Tupperware",
