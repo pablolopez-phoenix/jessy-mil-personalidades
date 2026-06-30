@@ -14,6 +14,18 @@ export interface Personality {
 
 export const personalities: Personality[] = [
   {
+    id: 10,
+    year: "2019",
+    title: "Jessy, la quinceañera eterna",
+    image: "/images/jessy-quinceanera.png",
+    alt: "Jessy en su gran fiesta de quince años",
+    tag: "La quinceañera",
+    accent: "pink",
+    description:
+      "En 2019, Jessy celebró una de las etapas más importantes de su biografía oficial: su gran fiesta de quince años. Con vestido rosa brillante, corona de realeza, copa en mano y una varita digna de cuento de hadas, Jessy dejó claro que no pensaba tener una fiesta sencilla, sino un evento histórico. Acompañada por sus chambelanes, luces románticas y una decoración digna de princesa moderna, convirtió la noche en una mezcla perfecta de glamour, drama y autoestima elevada. Los registros indican que brindó como adulta responsable, posó como celebridad y se adueñó del salón como si hubiera nacido para ese momento. Fue una noche inolvidable, donde quedó oficialmente inaugurada la leyenda de Jessy: una quinceañera de alto impacto y nula modestia.",
+    quote: "No crecí, solo me volví más icónica.",
+  },
+  {
     id: 1,
     year: "2020",
     title: "Jessy, la cajera del Oxxo",
