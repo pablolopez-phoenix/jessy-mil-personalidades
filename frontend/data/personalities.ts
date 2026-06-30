@@ -38,6 +38,18 @@ export const personalities: Personality[] = [
     quote: "Uno es sencillo, pero también exclusivo.",
   },
   {
+    id: 9,
+    year: "2021",
+    title: "Jessy, la mesera del Oktoberfest",
+    image: "/images/jessy-oktoberfest.png",
+    alt: "Jessy como mesera bávara en la carpa de Paulaner del Oktoberfest",
+    tag: "La mesera bávara",
+    accent: "yellow",
+    description:
+      "Durante el verano de 2021, Jessy decidió llevar su talento internacional y terminó trabajando como mesera en el Oktoberfest, dentro de la famosa carpa de Paulaner. Vestida al estilo bávaro, con sonrisa de fiesta patronal alemana y un tarro gigante en cada mano, rápidamente se volvió parte esencial del ambiente. Oficialmente estaba ahí para servir cerveza, pero los registros no oficiales aseguran que bebió más tarros de los que vendió. Entre brindis, mesas llenas, música, espuma y clientes felices, Jessy descubrió que también podía triunfar en Europa… siempre y cuando el turno incluyera degustación ilimitada. Fue una etapa breve, alegre y peligrosamente espumosa, donde quedó claro que cuando Jessy entra a una fiesta, la fiesta se convierte en capítulo histórico.",
+    quote: "Yo venía a servir cerveza… pero la cerveza tenía otros planes.",
+  },
+  {
     id: 3,
     year: "2022",
     title: "Jessy, enfermera del IMSS",
